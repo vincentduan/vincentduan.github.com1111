@@ -21,6 +21,8 @@ In `_config.yml` remember to specify your own data:
       github : vincentduan
      
 The theme should reference these variables whenever needed.
+
+##Test Bolg
     
 ## Sample Posts
 
@@ -36,6 +38,8 @@ Here's a sample "posts list".
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
+
+
 
 ## To-Do
 
