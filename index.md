@@ -15,7 +15,7 @@ In `_config.yml` remember to specify your own data:
     
     title : Vincent-Duan Blog
     
-    author :
+    author :Vincent-Duan Blog
       name : 段丁阳
       email : 1621424380@qq.com
       github : vincentduan
