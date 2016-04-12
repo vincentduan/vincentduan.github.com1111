@@ -1,7 +1,10 @@
 @mixin selection($col1, $col2){
     & ::selection
-    color: $col1
-    background-color: $col2
+      color: $col1
+      background-color: $col2
+    & ::-moz-selection
+      color: $col1
+      background-color: $col2
 }
 #main
   float: right
