@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+title: RRRR
 tags: Sass
 ---
 
