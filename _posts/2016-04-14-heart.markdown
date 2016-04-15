@@ -1,7 +1,12 @@
 ---
 layout: post
 title: heart
-tags: JS
+tags: 杂货箱
 ---
 
 fsdfsdfsdfsdfsdfsdfsd
+Alfred 2 将之前的 extension 功能改为现在的 workflow，所以将这三个 Jekyll 相关插件简单调整了一下，重新发布，欢迎大家使用，下载地址：[https://github.com/P233/Jekyll-Alfred-Extensions](https://github.com/P233/Jekyll-Alfred-Extensions)
+
+## Create new Jekyll Post
+
+输入 `newpost [title]`创建一篇 Jekyll 文章，文件名前自动添加今天的日期作为前缀，`title` 中请输入 `-` 代替空格。需要替换成自己的 Jekyll 文件夹的路径，格式必须以 `/Users/user_name/` 开头。
