@@ -1,11 +1,3 @@
-@mixin selection($col1, $col2)
-  & ::selection
-  color: $col1
-  background-color: $col2
-  & ::-moz-selection
-  color: $col1
-  background-color: $col2
-
 #main
   float: right
   width: calc(100% - #{$sidebar-width})
@@ -35,7 +27,12 @@ h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6
 
 
 .post
-  @include selection(#8C4114, #E2C8C8)
+  & ::selection 
+    color: #8C4114
+    background: #E2C8C8
+  & ::-moz-selection 
+    color: #8C4114
+    background: #E2C8C8
   padding-top: 2em
   font-size: $post-font-size
   line-height: $post-line-height
