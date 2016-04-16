@@ -1,0 +1,14 @@
+---
+layout: post
+title:  哈哈好
+tags: JS
+---
+  & ::-moz-selection {
+    color: #8C4114
+    background: #E2C8C8
+  }
+
+  & ::selection {
+    color: #8C4114
+    background: #E2C8C8
+  }
