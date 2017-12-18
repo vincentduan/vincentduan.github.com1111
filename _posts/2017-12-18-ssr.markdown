@@ -10,9 +10,11 @@ tags: 杂货箱
 
  1. 注意KVM/VMWARE/XEN才有用，锐速不支持 openVZ ！  
  2. 注意脚本会不断更新（目前时间2016.11.27），请关注 [逗比根据地原文](https://www.dou-bi.co/ss-jc42/)
+
 ------
+
 # 逗比一键脚本
-> * 简单的来说，如果你什么都不懂，那么你直接一路回车就可以了！
+> 简单的来说，如果你什么都不懂，那么你直接一路回车就可以了！
 
 ```shell
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
