@@ -14,12 +14,12 @@ tags: 杂货箱
 
 ------
 
-#逗比一键脚本
+# 逗比一键脚本
 > * 简单的来说，如果你什么都不懂，那么你直接一路回车就可以了！
 ```shell
 wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 ```
-#安装步骤
+# 安装步骤
 * 输入1，就会开始安装 ShadowsocksR 服务端，并且会提示你输入 Shadowsocks 的 `端口/密码/加密方式/协议/混淆` 等参数。
 ```shell
 Please input port for shadowsocksR [1-65535]:
@@ -94,7 +94,7 @@ https://www.dou-bi.co
 ```
 * SS url 是 SS 链接（格式： ss://XXXXXXX ，很长），可以从剪辑版导入 Shadowsocks 客户端，不懂的话看下面二维码。
 * QR code 是二维码，复制后面的链接在浏览器打开，就会显示一个二维码的图片，可以用 Shadowsocks 客户端扫描二维码来添加。
-#使用说明
+# 使用说明
 * 运行脚本
 ```shell
 bash ssr.sh
