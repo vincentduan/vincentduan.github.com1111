@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 配置ssr服务器
-tags: 杂货铺
+tags: 杂货箱
 ---
 
     
