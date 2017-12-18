@@ -1,0 +1,153 @@
+---
+layout: post
+title: 配置ssr服务器
+tags: 杂货铺
+---
+
+    
+
+
+> 使用此教程，可以完全不过脑子的搭建好 SSR，且速度进行了优化
+
+ 1. 注意KVM/VMWARE/XEN才有用，锐速不支持 openVZ ！  
+ 2. 注意脚本会不断更新（目前时间2016.11.27），请关注 [逗比根据地原文](https://www.dou-bi.co/ss-jc42/)
+
+------
+
+#逗比一键脚本
+> * 简单的来说，如果你什么都不懂，那么你直接一路回车就可以了！
+```shell
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+```
+#安装步骤
+* 输入1，就会开始安装 ShadowsocksR 服务端，并且会提示你输入 Shadowsocks 的 `端口/密码/加密方式/协议/混淆` 等参数。
+```shell
+Please input port for shadowsocksR [1-65535]:
+(Default port: 2333):
+
+Please input password for ShadowsocksR:
+(Default password: dou-bi.co):
+
+Please input method for ShadowsocksR:
+(Default method: aes-256-cfb):
+
+Please input protocol for ShadowsocksR:
+(Default protocol: auth_sha1_v4):
+
+Please input obfs for ShadowsocksR:
+(Default obfs: tls1.2_ticket_auth):
+```
+* 同时最后也会提示是否设置 协议和混淆 兼容原版（也就是使用原版 SS 也能链接），不懂<font color="red">直接回车或输入y</font>。
+```shell
+Need to set protocol and obfs compatible original ( _compatible )? [Y/n] :
+```
+* 不输入，直接回车就是默认参数：
+```shell
+端口：2333
+密码：dou-bi.co
+加密方式：aes-256-cfb
+协议：auth_sha1_v4_compatible
+混淆：tls1.2_ticket_auth_compatible
+```
+* 最后会提示让你确认是否输入正确，如果没问题那就按任意键继续安装，如果输入错误，那么就使用 Ctrl + C 退出脚本。
+```shell
+================================================
+Please confirm the following config is correct!
+
+ port : 2333
+ password : dou-bi.co
+ method : aes-256-cfb
+ protocol : auth_sha1_v4_compatible
+ obfs : tls1.2_ticket_auth_compatible
+================================================
+
+Press any key to continue. If it is not correct, use Ctrl + C to exit.
+```
+* 在安装 过程中，会提示你安装 `libsodium` 支持库（chacha20 加密方式的依赖），<font color="red">如果不懂直接回车 或 输入 y，默认安装（当然如果选成了 n 也不要紧，后面还可以单独安装）</font>。
+```shell
+Does libsodium support library (chacha20) be installed? [Y/n] :
+```
+* 如果安装过程没有出错，那么最后就会提示：
+```shell
+############################################################
+
+ Your ShadowsocksR info : 
+
+ Server IP: VPS_IP
+ Server Port: 2333
+ Password: dou-bi.co
+ Method: aes-256-cfb
+ Protocol: auth_sha1_v4_compatible
+ Obfs: tls1.2_ticket_auth_compatible
+
+ SS url: ss://XXXXXXXXXXXXXXXXXXXXX 
+ QR code: http://pan.baidu.com/share/qrcode?w=300&h=300&url=ss://XXXXXXXXXXXXXXXXXXXXX 
+Tip: Open the link above will be able to see two-dimensional code picture.
+Tip: The protocol and obfs last [ _compatible ] refer to the compatible original.
+
+############################################################
+
+ShadowsocksR install completed!
+https://www.dou-bi.co
+
+############################################################
+```
+* SS url 是 SS 链接（格式： ss://XXXXXXX ，很长），可以从剪辑版导入 Shadowsocks 客户端，不懂的话看下面二维码。
+* QR code 是二维码，复制后面的链接在浏览器打开，就会显示一个二维码的图片，可以用 Shadowsocks 客户端扫描二维码来添加。
+#使用说明
+* 运行脚本
+```shell
+bash ssr.sh
+```
+* 输入对应的数字来执行相应的命令。
+*中文版*
+```shell
+1.安装ShadowsocksR服务端
+2.安装libsodium(chacha20加密方式)
+3.查看账号信息
+4.修改账号信息
+5.手动修改账号信息
+6.卸载ShadowsocksR服务端
+7.更新ShadowsocksR服务端
+————————————
+8.启动ShadowsocksR
+9.停止ShadowsocksR
+10.重启ShadowsocksR
+————————————
+11.安装锐速（ServerSpeeder）
+12.查看锐速状态
+13.停止锐速
+14.重启锐速
+15.卸载锐速
+```
+*脚本中语言（英文）*
+```shell
+1. Install ShadowsocksR
+2. Install libsodium(chacha20)
+3. View user info
+4. Modify the user info
+5. Manually modify user info
+6. Uninstall ShadowsocksR
+7. Update ShadowsocksR
+—————————————
+8. Start ShadowsocksR
+9. Stop ShadowsocksR
+10. Restart ShadowsocksR
+—————————————
+11. install ServerSpeeder
+12. Status ServerSpeeder
+13. Stop ServerSpeeder
+14. Restart ServerSpeeder
+15. Uninstall ServerSpeeder
+```
+# 其他说明
+* 默认已经添加开机启动。
+* ShadowsocksR 默认支持 UDP 转发。
+* 本脚本已经集成了 安装 / 卸载 锐速 (ServerSpeeder) 开心版，但是是否支持请查看 [Linux 支持内核列表](https://www.91yun.org/wp-content/plugins/91yun-serverspeeder/systemlist.html) 。（锐速不支持 OpenVZ）
+* 多端口配置的话，脚本实现很麻烦，所以不会加入这个功能，需要的人还是手动更改为多端口吧：[ShadowsocksR 多端口配置](https://liyuans.com/archives/ssr-multi-user-configuration.html#_label0_3)
+* ShadowsocksR 目前支持的协议和混淆：
+    - 协议（Protocol）：origin，verify_sha1，auth_sha1_v2，auth_sha1_v4，auth_aes128_md5，auth_aes128_sha1
+    - 混淆（Obfs）：plain，http_simple，http_post，random_head，tls1.2_ticket_auth
+    - origin 和 plain 是原版，加粗的是推荐使用的，均支持 兼容原版（也就是加后缀 _compatible）。
+
+#### 转载自[逗比根据地](https://www.dou-bi.co/ss-jc42/)
